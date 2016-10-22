@@ -81,6 +81,7 @@ Git Key Concepts
 
  
  HEAD pointer
+ 
  =============
 
 point to the tip of the current branch in the "repository" not in the staging index or working.
@@ -92,6 +93,7 @@ points to the parent of the next commit.
 
 
 Commands
+
 ========
 
 git status # reports the difference between working  directory, staging index and repository
@@ -169,6 +171,7 @@ index fd9eb7a..8291d24 100644
 
 
 Undo the changes for an older version
+
 ======================================
 
 git checkout -- $fileName #go to the repository and look for fileName in the repository and make that particular file in working directory just like the file in the repository
@@ -176,12 +179,14 @@ git checkout -- $fileName #go to the repository and look for fileName in the rep
 git reset HEAD $fileName #go look to the Head pointer, go look at the fileName in the repository and set the same file in staging area to that of corresponding file in repository
 
 Ammending commits
+
 =================
 
 git commit --amend $commitMessage  #modify the latest Commit that we made at last with this commit that we are going to make now.
 
 
 Retrieving old version of the file
+
 =====================================
 
 git checkout $SHA_OF_OLD_COMMIT $fileName #checkout from a particular revision will put into a staged index. 
@@ -190,6 +195,7 @@ git reset HEAD $fileName # then put that particular old version file to the work
 
 
 Revert Command
+
 ===============
 
 git revert $HEAD_REV_NAME #Reverts the HEAD_REV_NAME to its previous version
@@ -202,6 +208,7 @@ git revert -n 68c3a395df4eb648d7744e0f2e0467e051b2246a #Reverts the head which i
 
 
 Using reset to undo multiple commits
+
 =====================================
 
 git reset #rewind back to previous commit and then start recording from there now on. It always move the head pointer.
@@ -230,7 +237,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 
  Remove untracked files
- ======================
+
+======================
 
 Remove all the files that are not in the repository.
 
@@ -241,19 +249,22 @@ Remove all the files that are not in the repository.
 
 
  Ignore git files globally
- =========================
+
+=========================
 
  git config --global core.excludes file $fileName #sets the global ignore to all the projects as per the $fileName
 
  
  Ignore the files that are already tracked
- ==========================================
+
+==========================================
  
  git rm --cached $fileName #will cause the file not being tracked.
  
  
  Track empty directories
- ========================
+
+========================
  
  By default, git doesn't track empty directories.
  
@@ -261,7 +272,8 @@ Remove all the files that are not in the repository.
  
  
  Referencing commits
- ====================
+
+====================
  
  tree-ish: 
 
@@ -285,7 +297,8 @@ Remove all the files that are not in the repository.
   
   
   Explore tree listings
-  ====================
+
+====================
   
   git ls-tree $treeish #will give the list of the files that are available that treeish which is referring to a commit.
   
